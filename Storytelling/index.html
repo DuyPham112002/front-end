@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:ital@1&family=Playfair+Display:wght@500&family=Poppins:wght@700&family=Roboto:wght@500&family=Source+Sans+3&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./depositphotos_239888342-stock-illustration-subtropical-climate-icon-trendy-subtropical.jpg" />
+    <title>Hòn Sơn island</title>
+  </head>
+  <body style="margin: 0; background-color: wheat">
+    <style>
+      /* nav {
+        background: transparent;
+      } */
+      #header {
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+        top: 0;
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      #header ul {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0;
+      }
+      #header ul li {
+        list-style: none;
+        padding: 20px 20px;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      #header ul li #category:hover {
+        border-bottom: 3px blue solid;
+        padding-bottom: 20px;
+      }
+      #header ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      #onlya {
+        border-bottom: 3px blue solid;
+      }
+      #btn-volume button{
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 20px;
+      }
+      #btn-volume button:hover{
+        cursor: pointer;
+        transform: scale(1.2);
+      }
+
+    </style>
+    <nav id="nav">
+      
+      <div id="header">
+        <div style="width: 70px; height: 70px; margin-right: 50px;">
+        <img src="./Img/island_icon_150904.png" alt="logo"  style="width: 70px; height: 80px;" >
+      </div>
+        <ul>
+          <li id="onlya"><a href="#" id="category">Home</a></li>
+          <li><a href="#story1" id="category">Feature</a></li>
+          <li><a href="" id="category">Pages</a></li>
+          <li><a href="" id="category">Contact</a></li>
+        </ul>
+
+       <div id="btn-volume" style="margin-right: 50px;">
+        <button onclick="play()" style="position: absolute; margin: 1px 1px; visibility: hidden;" id="btn-mute"><i class="fa-solid fa-volume-xmark"></i></button>
+        <button onclick="play()" id="btn-play" style="visibility: visible;"><i class="fa-solid fa-volume-high" ></i></button>
+      
+       </div>
+       <audio id="audio" autoplay loop><source src ="elysian.mp3"></audio>
+        
+      </div>
+
+      <script>
+        window.onscroll = function (e) {
+          posY = this.scrollY;
+          if (posY < 100) {
+            //document.getElementById('#header').classList.add('partially_transparent');
+            document.querySelector("#header").style =
+              "background: transparent; transition: 0.5s";
+          } else if (posY > 100) {
+            document.querySelector("#header").style =
+              "background-color: black;transition: 0.5s";
+          }
+        };
+
+        var isPlay = 0;
+        function play(){
+          var volumeElement = document.getElementById("audio");
+          if(isPlay == 0){
+            volumeElement.play();
+            document.getElementById("btn-mute").style.visibility = "hidden";
+            document.getElementById("btn-play").style.visibility = "visible";
+            isPlay = 1;
+          }
+          else{
+            volumeElement.pause();
+            isPlay = 0;
+            document.getElementById("btn-mute").style.visibility = "visible";
+            document.getElementById("btn-play").style.visibility = "hidden";
+          }
+        }
+
+        var isMute = 0;
+        function mute(){
+          var volumeElement = document.getElementById("audio");
+          if(isMute == 0){
+            console.log("mute")
+            volumeElement.volume = 0;
+            isMute = 1;
+          }
+          else{
+            volumeElement.volume = 1;
+            isMute = 0;
+          }
+        }
+
+      </script>
+
+      <style>
+        video {
+          width: 100%;
+        }
+
+        .textVideo {
+          position: absolute;
+          padding-top: 300px;
+          padding-left: 100px;
+        }
+      </style>
+      <div class="videoBackground" style="margin:0"> 
+        <div class="textVideo">
+          <img src="./Img/island_icon_150904.png" alt="img-Logo" style="width: 200px; height: 200px;" />
+          <h1
+            style="
+              font-family: 'Montserrat', sans-serif;
+              color: white;
+              font-size: 70px;
+            "
+          >
+            Go to Hòn Sơn
+          </h1>
+          <h1
+            style="
+              font-family: 'Montserrat', sans-serif;
+              color: white;
+              font-size: 70px;
+              padding-left: 1200px;
+              padding-top: 200px;
+            "
+          >
+            Go and enjoy
+          </h1>
+        </div>
+        <video autoplay muted loop>
+          <source src="Video/Hòn Sơn 4K - Flycam DJI Mini 3 (2023).mp4" />
+        </video>
+      </div>
+    </nav>
+    <style>
+      #story1{
+        width: 100%;
+        height: 900px;
+      }
+      #text-story1 {
+        width: 600px;
+        padding-left: 50px;
+        padding-top: 300px;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+
+      .img-story1 {
+        display: flex;
+        justify-content: center;
+      }
+      /* .icon-img {
+        position: absolute;
+      } */
+      #btn-img {
+        background-color: transparent;
+        border: none;
+        font-size: 50px;
+        color: black;
+        border-radius: 10px;
+        margin-top: 200px;
+      }
+      #btn-img:hover {
+        border-radius: 10px;
+        transform: scale(1.2);
+        cursor: pointer;
+        color: white;
+      }
+      #progress-story1{
+      accent-color: white;
+      align-items: center;
+    
+     }
+
+       
+    </style>
+    <main>
+      
+        <div id="story1" style="background-image: url('./Img/img-intro/1.png');background-repeat: no-repeat;margin: 0;">
+          <div id="text-story1">
+            <h1
+              style="
+                font-family: 'Montserrat', sans-serif;
+                font-size: 40px;
+                margin: 0;
+              "
+            >
+              Đảo Hòn Sơn
+            </h1>
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 20px">
+              Hòn Sơn thuộc vịnh Hà Tiên, cách Rạch Giá 65km, nằm giữa đảo Nam
+              Du và đảo Hòn Tre. Hòn Sơn còn có tên gọi là đảo Rái Cá bởi ngày
+              trước nơi này mọc rất nhiều cây dầu rái, nhựa của chúng dùng để
+              quét lên vỏ thuyền, tránh bị nước biển ăn mòn.
+            </p>
+            </div>
+            <div class="img-story1">
+              <div class="icon-img">
+                <button id="btn-img" onclick="previous()">
+                  <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <progress max="100" value="25" style="width: 1000px;height: 10px;padding-bottom: 40px;" id="progress-story1" ></progress>
+                <button id="btn-img" onclick="next()">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>  
+        </div> 
+    </main>
+    <script>
+      var indexImg = 1;
+      function next() {
+        var imgElement = document.getElementById("story1");
+        var progressElement = document.getElementById("progress-story1");
+        if (indexImg < 4) {
+          indexImg++;
+          if(indexImg == 1){
+          imgElement.style.backgroundImage = "url(./Img/img-intro/"+indexImg+".png)";
+          progressElement.setAttribute("value","25")
+          }
+          if(indexImg == 2){
+            imgElement.style.backgroundImage = "url(./Img/img-intro/"+indexImg+".png)";
+          progressElement.setAttribute("value","50")
+          }
+          if(indexImg == 3){
+            imgElement.style.backgroundImage = "url(./Img/img-intro/"+indexImg+".png)";
+          progressElement.setAttribute("value","75")
+          }
+          if(indexImg == 4){
+            imgElement.style.backgroundImage = "url(./Img/img-intro/"+indexImg+".png)";
+          progressElement.setAttribute("value","100")
+          }
+
+        } else {
+          indexImg = 1;
+          imgElement.style.backgroundImage = "url(./Img/img-intro/"+indexImg+".png)";
+          progressElement.setAttribute("value","25")
+        }
+      }
+      function previous() {
+        var imgElement = document.getElementById("story1");
+        var progressElement = document.getElementById("progress-story1");
+        if (indexImg > 1) {
+          indexImg--;
+          if(indexImg == 4){
+            imgElement.style.backgroundImage = "url(./Img/img-intro/"+indexImg+".png)";
+          progressElement.setAttribute("value","100")
+          }
+          if(indexImg == 1){
+          imgElement.style.backgroundImage = "url(./Img/img-intro/"+indexImg+".png)";
+          progressElement.setAttribute("value","25")
+          } 
+          if(indexImg == 2){
+            imgElement.style.backgroundImage = "url(./Img/img-intro/"+indexImg+".png)";
+          progressElement.setAttribute("value","50")
+          }
+          if(indexImg == 3){
+            imgElement.style.backgroundImage = "url(./Img/img-intro/"+indexImg+".png)";
+          progressElement.setAttribute("value","75")
+          }
+        
+        } else {
+          indexImg = 4
+            imgElement.style.backgroundImage = "url(./Img/img-intro/"+indexImg+".png)";
+          progressElement.setAttribute("value","100")
+          
+        }
+      }
+    </script>
+
+    <style>
+      #td-table{
+        width: 100%;
+        height: 900px;
+      }
+      #text-story2 {
+        width: 600px;
+        padding-left: 50px;
+        padding-top: 200px;
+      
+        align-items: center;
+        justify-content: center;
+        color: white;
+        position: absolute;
+      }
+      .img-story2 {
+        display: flex;
+        justify-content: center;
+        padding-top: 600px;
+     
+      }
+      #progress{
+      accent-color: white;
+      align-items: center;
+    
+     }
+    </style>
+   
+    <div id="places" style="margin: 0;">
+      <div id="td-table" style="background-image: url('./Img/img-diadanh/1.png');background-repeat: no-repeat;margin: 0;">
+        <div id="text-story2">
+          <h1
+            style="
+              font-family: 'Montserrat', sans-serif;
+              font-size: 40px;
+              margin: 0;
+              border-bottom: 5px solid black;
+              width: 400px;
+            "
+            id="title-h1"
+          >
+          Đình thần Lại Sơn
+          </h1>
+          <p style="font-family: 'Montserrat', sans-serif; font-size: 20px" id="title-p">
+            Một trong những di tích lịch sử đáng chú ý là Đình thần Lại Sơn - nơi thờ tự Thành hoàng bổn cảnh, phối thờ người anh hùng Nguyễn Trung Trực ở tiền điện. Đặc biệt, đình có sắc phong của vua Bảo Đại cho Thành hoàng. Trong đền, trên tấm vách cũ bên hương án và trong ngổn ngang kiệu rước trống hội có treo một bức tranh được vẽ vào năm 1969.
+          </p>
+          </div>
+          <div class="img-story2">
+            <div class="icon-img">
+              <button id="btn-img" onclick="previousdiadanh()">
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+              <progress max="99" value="33" style="width: 1000px;height: 10px;padding-bottom: 40px;" id="progress" ></progress>
+              <button id="btn-img" onclick="nextdiadanh()">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>  
+      </div> 
+      
+    </div>
+   
+
+    <script>
+      var indexImg = 0;
+      function nextdiadanh(){
+        var imgElement = document.getElementById("td-table");
+        var titleh1 = document.getElementById("title-h1");
+        var titlep = document.getElementById("title-p");
+        var progressbar = document.getElementById("progress")
+        if(indexImg < 3){
+          console.log("img")
+          indexImg++;
+          if(indexImg == 1){
+          imgElement.style.backgroundImage = `url('./Img/img-diadanh/${indexImg}.png')`;
+          titleh1.innerHTML = "Đình thần Lại Sơn";
+          titlep.innerHTML = "Một trong những di tích lịch sử đáng chú ý là Đình thần Lại Sơn - nơi thờ tự Thành hoàng bổn cảnh, phối thờ người anh hùng Nguyễn Trung Trực ở tiền điện. Đặc biệt, đình có sắc phong của vua Bảo Đại cho Thành hoàng. Trong đền, trên tấm vách cũ bên hương án và trong ngổn ngang kiệu rước trống hội có treo một bức tranh được vẽ vào năm 1969."
+          progressbar.setAttribute("value","33")
+          }
+          if(indexImg == 2){
+          imgElement.style.backgroundImage = `url('./Img/img-diadanh/${indexImg}.png')`;
+          titleh1.innerHTML = "Miếu Bà Cố Chủ";
+          titlep.innerHTML = "Miếu Bà Cố Chủ hay còn gọi là Bà Chúa Hòn tọa lạc ở xã Lại Sơn, huyện Kiên Hải, tỉnh Kiên Giang nằm cách thành phố Rạch Giá 65km về phía Tây, với diện tích 11,5km2. Theo truyền thuyết Bà tới hòn đảo này rất sớm từ lúc nó còn hoang vu cùng với con gái và con rể. Tên của Bà là Nguyễn Thị Phố, quê ở Cà Mau. Từ đó, ngư dân từ khắp nơi về đây sinh cơ lập nghiệp trong sự đùm bọc chở che của Bà Chúa Hòn và đã lập miếu là nơi thờ người đầu tiên đến và khai phá vùng đất đảo hoang vu Hòn Sơn."
+          progressbar.setAttribute("value","66")
+        }
+        
+        if(indexImg == 3){
+          imgElement.style.backgroundImage = `url('./Img/img-diadanh/${indexImg}.png')`;
+          titleh1.innerHTML = "chùa Hải Sơn";
+          titlep.innerHTML = "Đây là một ngôi chùa có lịch sử lâu đời nhất tại Hòn Sơn, rất được nhiều người dân trên đảo tin tưởng và thường xuyên đi chùa cúng bái, hiện tại chùa Hải Sơn cũng là một địa điểm tham quan của các du khách từ phương xa đến Hòn Sơn để tham quan, vì vậy chuyến du lịch Hòn Sơn của bạn đừng bao giờ quên ghé qua chùa để tham quan và cầu nguyện mai mắn cho gia đình và người thân của bạn nhé."
+          progressbar.setAttribute("value","99")
+        }
+
+        }
+
+       
+        else{
+          indexImg = 1;
+          imgElement.style.backgroundImage = `url('./Img/img-diadanh/${indexImg}.png')`;
+          titleh1.innerHTML = "Đình thần Lại Sơn";
+          titlep.innerHTML = "Một trong những di tích lịch sử đáng chú ý là Đình thần Lại Sơn - nơi thờ tự Thành hoàng bổn cảnh, phối thờ người anh hùng Nguyễn Trung Trực ở tiền điện. Đặc biệt, đình có sắc phong của vua Bảo Đại cho Thành hoàng. Trong đền, trên tấm vách cũ bên hương án và trong ngổn ngang kiệu rước trống hội có treo một bức tranh được vẽ vào năm 1969."
+          progressbar.setAttribute("value","33")
+        }
+      }
+
+      function previousdiadanh(){
+        var imgElement = document.getElementById("td-table");
+        var titleh1 = document.getElementById("title-h1");
+        var titlep = document.getElementById("title-p");
+        var progressbar = document.getElementById("progress")
+
+        if(indexImg > 1){
+          console.log("img")
+          indexImg--;
+          if(indexImg == 3){
+          imgElement.style.backgroundImage = `url('./Img/img-diadanh/${indexImg}.png')`;
+          titleh1.innerHTML = "chùa Hải Sơn";
+          titlep.innerHTML = "Đây là một ngôi chùa có lịch sử lâu đời nhất tại Hòn Sơn, rất được nhiều người dân trên đảo tin tưởng và thường xuyên đi chùa cúng bái, hiện tại chùa Hải Sơn cũng là một địa điểm tham quan của các du khách từ phương xa đến Hòn Sơn để tham quan, vì vậy chuyến du lịch Hòn Sơn của bạn đừng bao giờ quên ghé qua chùa để tham quan và cầu nguyện mai mắn cho gia đình và người thân của bạn nhé."
+          progressbar.setAttribute("value","100")
+        }
+        if(indexImg == 1){
+          imgElement.style.backgroundImage = `url('./Img/img-diadanh/${indexImg}.png')`;
+          titleh1.innerHTML = "Đình thần Lại Sơn";
+          titlep.innerHTML = "Một trong những di tích lịch sử đáng chú ý là Đình thần Lại Sơn - nơi thờ tự Thành hoàng bổn cảnh, phối thờ người anh hùng Nguyễn Trung Trực ở tiền điện. Đặc biệt, đình có sắc phong của vua Bảo Đại cho Thành hoàng. Trong đền, trên tấm vách cũ bên hương án và trong ngổn ngang kiệu rước trống hội có treo một bức tranh được vẽ vào năm 1969."
+          progressbar.setAttribute("value","33")
+        }
+        if(indexImg == 2){
+          imgElement.style.backgroundImage = `url('./Img/img-diadanh/${indexImg}.png')`;
+          titleh1.innerHTML = "Miếu Bà Cố Chủ";
+          titlep.innerHTML = "Miếu Bà Cố Chủ hay còn gọi là Bà Chúa Hòn tọa lạc ở xã Lại Sơn, huyện Kiên Hải, tỉnh Kiên Giang nằm cách thành phố Rạch Giá 65km về phía Tây, với diện tích 11,5km2. Theo truyền thuyết Bà tới hòn đảo này rất sớm từ lúc nó còn hoang vu cùng với con gái và con rể. Tên của Bà là Nguyễn Thị Phố, quê ở Cà Mau. Từ đó, ngư dân từ khắp nơi về đây sinh cơ lập nghiệp trong sự đùm bọc chở che của Bà Chúa Hòn và đã lập miếu là nơi thờ người đầu tiên đến và khai phá vùng đất đảo hoang vu Hòn Sơn."
+          progressbar.setAttribute("value","66")
+        }
+        }
+       
+        else{
+          indexImg = 3;
+          imgElement.style.backgroundImage = `url('./Img/img-diadanh/${indexImg}.png')`;
+          titleh1.innerHTML = "chùa Hải Sơn";
+          titlep.innerHTML = "Đây là một ngôi chùa có lịch sử lâu đời nhất tại Hòn Sơn, rất được nhiều người dân trên đảo tin tưởng và thường xuyên đi chùa cúng bái, hiện tại chùa Hải Sơn cũng là một địa điểm tham quan của các du khách từ phương xa đến Hòn Sơn để tham quan, vì vậy chuyến du lịch Hòn Sơn của bạn đừng bao giờ quên ghé qua chùa để tham quan và cầu nguyện mai mắn cho gia đình và người thân của bạn nhé."
+          progressbar.setAttribute("value","100")
+        }
+      }
+    </script>
+
+    <style>
+      .backgound-thiennhien{
+        background-image: url('./Img/img-backgroud/back-ground.png');
+        width: 100%;
+        margin: 0;
+      }
+      .contaner {
+        width: 1400px;
+        margin: auto;
+      }
+      .story3{
+        /* margin-top: 200px; */
+        font-size: 20px;
+        text-align: center;
+      }
+      .text-intro{
+        font-family: 'Montserrat', sans-serif;
+      }
+      .control-btn{
+        display: flex;
+        justify-content: center;
+      }
+      #video{
+        border-radius: 10px;
+      }
+      #btn-vide{
+        padding-left: 170px;
+        margin-top: 10px;
+      }
+      #btn-vide button{
+        font-size: 30px;
+        /*width: 50px;
+        height: 30px; */
+        background-color: transparent;
+        border: none;
+        padding: 20px 30px; 
+        align-items: center;
+      }
+      #btn-vide button:hover{
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        border-radius: 10px;
+      }
+      #btn-volume-video{
+        margin-left: 50px;
+        margin-top: 10px;
+      }
+      #btn-volume-video button{
+        font-size: 30px;
+        /* width: 50px;
+        height: 30px; */
+        background-color: transparent;
+        padding: 20px 30px;                                     
+        border: none;
+      }
+      #btn-volume-video button:hover{
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        border-radius: 10px;
+      }
+    </style>
+  <div class="backgound-thiennhien">
+    <div class="contaner">
+      <div class="story3">
+        <div class="text-intro">
+          <h1 style="margin-top: 0;"> Thiên nhiên</h1>
+          <p>Hòn Sơn có 7 đỉnh núi dính liền vào nhau, Ma Thiên Lãnh là đỉnh núi cao nhất với độ cao khoảng 450 m so với mặt nước biển, trên đỉnh Ma Thiên Lãnh có một tảng đá bằng phẳng, với phong cảnh xung quanh rất đẹp nên gọi là Sân Tiên.</p>
+        </div>
+        <div class="video-control">
+          <video id="video"> <source src="./Video/1.mp4"></video>
+        </div>
+          <div class="control-btn">
+          <div id="btn-vide">
+          <button onclick="previous_video()"><i class="fa-solid fa-backward"></i></button>
+          <button id="pause-video" style="position: absolute;visibility: hidden;"onclick="playVideo()"><i class="fa-solid fa-pause"></i></button>
+          <button id="play-video" style="visibility: visible;" onclick="playVideo()"><i class="fa-solid fa-play"></i></button>
+          <button onclick="next_video()"><i class="fa-solid fa-forward"></i></button>
+          </div>  
+          <div id="btn-volume-video">
+            <button style="position: absolute;visibility: hidden;" id="btn-volume-control" onclick="mute()"><i class="fa-solid fa-volume-xmark"></i></button>
+            <button  id="btn-volume-control 1" style="visibility: visible;"><i class="fa-solid fa-volume-high"onclick="mute()"></i></button>
+          </div>
+        </div>
+        </div>
+      </div>
+  
+  </div>
+
+  <script>
+    var isPlay = 0;
+    var isMute = 0;
+    var indexVideo = 1;
+
+    function playVideo(){             
+      var videoElement = document.getElementById("video");
+      if(isPlay == 0){
+        videoElement.play();
+        document.getElementById("play-video").style.visibility = "hidden";
+        document.getElementById("pause-video").style.visibility = "visible";
+        isPlay = 1;
+      }
+      else{
+        isPlay = 0;
+        document.getElementById("pause-video").style.visibility = "hidden";
+        document.getElementById("play-video").style.visibility = "visible";
+        videoElement.pause();
+      }
+    }
+    function mute(){
+          var volumeElement = document.getElementById("video");
+          if(isMute == 0){
+            console.log("mute")
+            volumeElement.volume = 0;
+            document.getElementById("btn-volume-control 1").style.visibility ="hidden";
+            document.getElementById("btn-volume-control").style.visibility ="visible";
+            isMute = 1;
+          }
+          else{
+            volumeElement.volume = 1;
+            document.getElementById("btn-volume-control").style.visibility ="hidden";
+            document.getElementById("btn-volume-control 1").style.visibility ="visible";
+            isMute = 0;
+          }
+        }
+    function next_video(){
+      var videoElement = document.getElementById("video");
+      if(indexVideo < 2){
+        indexVideo ++;
+        videoElement.src = "Video/" + indexVideo + '.mp4'
+        if(isPlay == 1){
+          videoElement.play();
+        }
+      }else{
+        indexVideo = 1;
+        videoElement.src = "Video/" + indexVideo + '.mp4'
+        if(isPlay == 1){
+          videoElement.play();
+        }
+      }
+    }
+    function previous_video(){
+      var videoElement = document.getElementById("video");
+      if(indexVideo > 1){
+        indexVideo --;
+        videoElement.src = "Video/" + indexVideo + '.mp4'
+        if(isPlay == 1){
+          videoElement.play();
+        }
+      }else{
+        indexVideo = 2;
+        videoElement.src = "Video/" + indexVideo + '.mp4'
+        if(isPlay ==1){
+          videoElement.play();
+        }
+      }
+    }
+  </script>
+
+<style>
+  #progress-bien{
+      accent-color: white;
+      align-items: center;
+    
+     }
+</style>
+<div id="places" style="margin: 0;">
+  <div id="td-table1" style="background-image: url('./Img/Img-bien/1.png');background-repeat: no-repeat;margin: 0;">
+    <div id="text-story2">
+      <h1
+        style="
+          font-family: 'Montserrat', sans-serif;
+          font-size: 40px;
+          margin: 0;
+          border-bottom: 5px solid black;
+          width: 400px;
+        "
+        id="title-h1-bien"
+      >
+      Bãi biển Thiên Tuế
+      </h1>
+      <p style="font-family: 'Montserrat', sans-serif; font-size: 20px" id="title-p-bien">
+        Bãi biển này sẽ mang đến cho bạn không gian nhộn nhịp vì nơi đây rất đông tàu cá, thuyền bè. Hơn nữa, đây cũng là một điểm check-in khá tiềm năng và độc lạ bởi sự hoang sơ và hình dạng biển như một cách cung hướng ra biển.
+      </p>
+      </div>
+      <div class="img-story2">
+        <div class="icon-img">
+          <button id="btn-img" onclick="previousbien()">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <progress max="100" value="25" style="width: 1000px;height: 10px;padding-bottom: 40px;" id="progress-bien" ></progress>
+          <button id="btn-img" onclick="nextbien()">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>  
+  </div> 
+  <script>
+    var indexImg = 0;
+    function nextbien(){
+      var imgElement = document.getElementById("td-table1");
+      var titleh1 = document.getElementById("title-h1-bien");
+      var titlep = document.getElementById("title-p-bien");
+      var progressbar = document.getElementById("progress-bien")
+      if(indexImg < 4){
+        console.log("img")
+        indexImg++;
+        if(indexImg == 1){
+        imgElement.style.backgroundImage = `url('./Img/img-bien/${indexImg}.png')`;
+        titleh1.innerHTML = "Bãi biển Thiên Tuế";
+        titlep.innerHTML = "Bãi biển này sẽ mang đến cho bạn không gian nhộn nhịp vì nơi đây rất đông tàu cá, thuyền bè. Hơn nữa, đây cũng là một điểm check-in khá tiềm năng và độc lạ bởi sự hoang sơ và hình dạng biển như một cách cung hướng ra biển."
+        progressbar.setAttribute("value","25")
+        }
+        if(indexImg == 2){
+        imgElement.style.backgroundImage = `url('./Img/img-bien/${indexImg}.png')`;
+        titleh1.innerHTML = "Bãi biển Bãi Bấc";
+        titlep.innerHTML = "nằm cách đất liền 60km, bãi Bấc thuộc top những bãi biển trong xanh và sạch sẽ nhất ở Hòn Sơn. thế nên, bạn có thể chọn tắm biển và chill tại không gian chất lượng này. Ngoài ra, khi đến bãi Bấc, bạn có thể kết hợp ghé qua Bãi Nhà, Bãi Giếng hay Bãi Thiên Tuế luôn."
+        progressbar.setAttribute("value","50")
+      }
+      
+      if(indexImg == 3){
+        imgElement.style.backgroundImage = `url('./Img/img-bien/${indexImg}.png')`;
+        titleh1.innerHTML = "Bãi biển Bãi Bàng";
+        titlep.innerHTML = "Nếu bãi Bấc được xem là sạch nhất thì bãi Bàng sẽ dành vị trí hoang sơ và thơ mộng nhất. Khi bạn muốn tận hưởng cảm giác đắm mình dưới làn nước trong veo và hít thở dưới không gian lãng mạn thì hãy chạy vội ra bãi Bàng nhé."
+        progressbar.setAttribute("value","75")
+      }
+
+      if(indexImg == 4){
+        imgElement.style.backgroundImage = `url('./Img/img-bien/${indexImg}.png')`;
+        titleh1.innerHTML = "Bãi Xếp";
+        titlep.innerHTML = "Đây sẽ là nơi để những tín đồ đam mê câu cá được thử sức nè. Không chỉ đơn thuần là câu cá, mà bạn còn được ngồi ngắm biển xanh mênh mông, có hàng dừa che bóng mát và ngồi trên những phiến đá"
+        progressbar.setAttribute("value","100")
+      }
+      }
+
+     
+      else{
+        indexImg = 1;
+        imgElement.style.backgroundImage = `url('./Img/img-bien/${indexImg}.png')`;
+        titleh1.innerHTML = "Bãi biển Thiên Tuế";
+        titlep.innerHTML = "Bãi biển này sẽ mang đến cho bạn không gian nhộn nhịp vì nơi đây rất đông tàu cá, thuyền bè. Hơn nữa, đây cũng là một điểm check-in khá tiềm năng và độc lạ bởi sự hoang sơ và hình dạng biển như một cách cung hướng ra biển."
+        progressbar.setAttribute("value","33")
+      }
+    }
+
+    function previousbien(){
+      var imgElement = document.getElementById("td-table1");
+      var titleh1 = document.getElementById("title-h1-bien");
+      var titlep = document.getElementById("title-p-bien");
+      var progressbar = document.getElementById("progress-bien")
+
+      if(indexImg > 1){
+        console.log("img")
+        indexImg--;
+        if(indexImg == 4){
+        imgElement.style.backgroundImage = `url('./Img/img-bien/${indexImg}.png')`;
+        titleh1.innerHTML = "chùa Hải Sơn";
+        titlep.innerHTML = "Đây là một ngôi chùa có lịch sử lâu đời nhất tại Hòn Sơn, rất được nhiều người dân trên đảo tin tưởng và thường xuyên đi chùa cúng bái, hiện tại chùa Hải Sơn cũng là một địa điểm tham quan của các du khách từ phương xa đến Hòn Sơn để tham quan, vì vậy chuyến du lịch Hòn Sơn của bạn đừng bao giờ quên ghé qua chùa để tham quan và cầu nguyện mai mắn cho gia đình và người thân của bạn nhé."
+        progressbar.setAttribute("value","100")
+      }
+      if(indexImg == 1){
+        imgElement.style.backgroundImage = `url('./Img/img-bien/${indexImg}.png')`;
+        titleh1.innerHTML = "Bãi biển Thiên Tuế";
+        titlep.innerHTML = "Một trong những di tích lịch sử đáng chú ý là Đình thần Lại Sơn - nơi thờ tự Thành hoàng bổn cảnh, phối thờ người anh hùng Nguyễn Trung Trực ở tiền điện. Đặc biệt, đình có sắc phong của vua Bảo Đại cho Thành hoàng. Trong đền, trên tấm vách cũ bên hương án và trong ngổn ngang kiệu rước trống hội có treo một bức tranh được vẽ vào năm 1969."
+        progressbar.setAttribute("value","25")
+      }
+      if(indexImg == 2){
+        imgElement.style.backgroundImage = `url('./Img/img-bien/${indexImg}.png')`;
+        titleh1.innerHTML = "Bãi biển Bãi Bấc";
+        titlep.innerHTML = "nằm cách đất liền 60km, bãi Bấc thuộc top những bãi biển trong xanh và sạch sẽ nhất ở Hòn Sơn. thế nên, bạn có thể chọn tắm biển và chill tại không gian chất lượng này. Ngoài ra, khi đến bãi Bấc, bạn có thể kết hợp ghé qua Bãi Nhà, Bãi Giếng hay Bãi Thiên Tuế luôn."
+        progressbar.setAttribute("value","50")
+      }
+      if(indexImg == 3){
+        imgElement.style.backgroundImage = `url('./Img/img-bien/${indexImg}.png')`;
+        titleh1.innerHTML = "Bãi biển Bãi Bàng";
+        titlep.innerHTML = "Nếu bãi Bấc được xem là sạch nhất thì bãi Bàng sẽ dành vị trí hoang sơ và thơ mộng nhất. Khi bạn muốn tận hưởng cảm giác đắm mình dưới làn nước trong veo và hít thở dưới không gian lãng mạn thì hãy chạy vội ra bãi Bàng nhé."
+        progressbar.setAttribute("value","75")
+      }
+      }
+     
+      else{
+        indexImg = 4;
+        imgElement.style.backgroundImage = `url('./Img/img-bien/${indexImg}.png')`;
+        titleh1.innerHTML = "Bãi Xếp";
+        titlep.innerHTML = "Đây sẽ là nơi để những tín đồ đam mê câu cá được thử sức nè. Không chỉ đơn thuần là câu cá, mà bạn còn được ngồi ngắm biển xanh mênh mông, có hàng dừa che bóng mát và ngồi trên những phiến đá"
+        progressbar.setAttribute("value","100")
+      }
+    }
+  </script>
+
+  <style>
+    .tourist{
+      width: 100%;
+    }
+    .container{
+      width: 1200px;
+      margin: auto;
+    }
+    .container h1{
+      font-family: "Montserrat", sans-serif;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      padding-top: 20px;
+      margin-bottom: 10px;
+    }
+    .container a{
+      font-family: "Montserrat", sans-serif;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 20px;
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 25px;
+    }
+    .more-detail{
+      font-family: "Montserrat", sans-serif;                                        
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+
+  <div class="tourist" style="background-color: aquamarine;">
+  <div class="container">
+    <h1>Tham khảo giá du lịch Hòn Sơn</h1>
+    <div class="img-tourist" style="justify-content: center;align-items: center;display: flex; padding: 20px 0px;">
+      <img src="./Img/img-tourist/bang-gia-tour-hon-son-2-ngay-1-dem.jpg" alt="bang gia tour" style="height: 800px;">
+    </div>
+    <div class="more-detail">
+      
+      <ul>
+        <li style="list-style: none;"><h2>Giá tour Hòn Sơn 2 ngày 1 đêm không bao gồm</h2></li>
+        <li>Thức uống giải khát trong bữa ăn.</li>
+        <li>Các chi phí cá nhân: Chụp ảnh, điện thoại, nước uống trong phòng,…</li>
+        <li>VAT.</li>
+      </ul>
+    </div>
+    <a href="https://tourcantho.vn/tour-du-lich-hon-son-2-ngay-1-dem-tu-can-tho/" style="margin: 0;">Click vào để xem chi tiết</a>
+  </div>
+</div>
+</div>
+    <style>
+    
+      .story-final{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .final-text{
+        padding-top: 50px ;
+        font-size: 20px;
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+      }
+      .input-mail{
+        font-size: 20px
+      }
+   
+      .input-mail i{
+        font-size: 25px;
+        color: black;
+        background-color: white;
+        margin: 0;
+        padding: 1px 5px;
+        border-radius: 10px;
+        align-items: center;
+      }
+
+      #btn-final{
+        background-color: white;
+        color: black;
+        font-size: 17px;
+        margin: 0 10px;
+        width: 80px;
+      }
+
+      #btn-final:hover{
+        cursor: pointer;
+      }
+
+    </style>
+
+    <footer style="background-color: #BFB29E; width: 100%; height: 300px;">
+      <div class="contaner">
+        <div class="story-final" >
+        <div class="final-text" style="width: 40%;">
+          <h3>Luôn biết thông tin mới nhất</h3>
+          <p>Đăng ký nhận bản tin của chúng tôi để biết thêm các khuyến nghị về du lịch và phong cách sống cũng như các chương trình khuyến mãi thú vị.</p>
+        </div>
+        <div class="input-mail" style="width: 50%;">
+          <i class="fa-regular fa-envelope"></i>
+          <input type="text" placeholder= "Điền email của bạn tại đây" style="width: 400px;height: 20px;" >
+          <input type="button" value="Đăng ký" id="btn-final" onclick="register()">
+        </div>
+      </div>
+      </div>
+    </footer>
+    <script>
+      isClick = 0;
+      function register(){
+        alert("Cảm ơn bạn đã đăng ký!!!")
+      }
+    </script>
+  </body>
+</html>

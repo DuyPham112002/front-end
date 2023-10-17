@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:ital@1&family=Playfair+Display:wght@500&family=Poppins:wght@700&family=Roboto:wght@500&family=Source+Sans+3&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="margin: 0; background-color: wheat">
+    <style>
+      /* nav {
+        background: transparent;
+      } */
+      #header {
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+        top: 0;
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      #header ul {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0;
+      }
+      #header ul li {
+        list-style: none;
+        padding: 20px 20px;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      #header ul li #category:hover {
+        border-bottom: 3px blue solid;
+        padding-bottom: 20px;
+      }
+      #header ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      #onlya {
+        border-bottom: 3px blue solid;
+      }
+      #btn-volume button{
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 20px;
+      }
+      #btn-volume button:hover{
+        cursor: pointer;
+        transform: scale(1.2);
+      }
+
+    </style>
+    <nav id="nav">
+      
+      <div id="header">
+        <div style="width: 70px; height: 70px; margin-right: 50px;">
+        <img src="./Img/island_icon_150904.png" alt="logo"  style="width: 70px; height: 80px;" >
+      </div>
+        <ul>
+          <li id="onlya"><a href="" id="category">Home</a></li>
+          <li><a href="" id="category">Feature</a></li>
+          <li><a href="" id="category">Pages</a></li>
+          <li><a href="" id="category">Contact</a></li>
+        </ul>
+
+       <div id="btn-volume" style="margin-right: 50px;">
+        <button onclick="play()" style="position: absolute; margin: 1px 1px; visibility: hidden;" id="btn-mute"><i class="fa-solid fa-volume-xmark"></i></button>
+        <button onclick="play()" id="btn-play" style="visibility: visible;"><i class="fa-solid fa-volume-high" ></i></button>
+      
+       </div>
+       <audio id="audio" autoplay loop><source src ="elysian.mp3"></audio>
+        
+      </div>
+
+      <script>
+        window.onscroll = function (e) {
+          posY = this.scrollY;
+          if (posY < 100) {
+            //document.getElementById('#header').classList.add('partially_transparent');
+            document.querySelector("#header").style =
+              "background: transparent; transition: 0.5s";
+          } else if (posY > 100) {
+            document.querySelector("#header").style =
+              "background-color: black;transition: 0.5s";
+          }
+        };
+
+        var isPlay = 0;
+        function play(){
+          var volumeElement = document.getElementById("audio");
+          if(isPlay == 0){
+            volumeElement.play();
+            document.getElementById("btn-mute").style.visibility = "hidden";
+            document.getElementById("btn-play").style.visibility = "visible";
+            isPlay = 1;
+          }
+          else{
+            volumeElement.pause();
+            isPlay = 0;
+            document.getElementById("btn-mute").style.visibility = "visible";
+            document.getElementById("btn-play").style.visibility = "hidden";
+          }
+        }
+
+        var isMute = 0;
+        function mute(){
+          var volumeElement = document.getElementById("audio");
+          if(isMute == 0){
+            console.log("mute")
+            volumeElement.volume = 0;
+            isMute = 1;
+          }
+          else{
+            volumeElement.volume = 1;
+            isMute = 0;
+          }
+        }
+
+      </script>
+
+      <style>
+        video {
+          width: 100%;
+        
+
+        }
+
+        .textVideo {
+          position: absolute;
+          padding-top: 300px;
+          padding-left: 100px;
+        
+        
+        }
+      </style>
+      <div class="videoBackground" style="margin:-5px;"> 
+        <div class="textVideo">
+          <img src="./Img/island_icon_150904.png" alt="img-Logo" style="width: 200px; height: 200px;" />
+          <h1
+            style="
+              font-family: 'Montserrat', sans-serif;
+              color: white;
+              font-size: 70px;
+            "
+          >
+            Go to Hòn Sơn
+          </h1>
+          <h1
+            style="
+              font-family: 'Montserrat', sans-serif;
+              color: white;
+              font-size: 70px;
+              padding-left: 1200px;
+              padding-top: 200px;
+            "
+          >
+            Go and enjoy
+          </h1>
+        </div>
+        <video autoplay muted loop>
+          <source src="Video/Hòn Sơn 4K - Flycam DJI Mini 3 (2023).mp4" />
+        </video>
+      </div>
+    </nav>
+    <style>
+      .contaner {
+        width: 1200px;
+        margin: auto;
+      }
+      .text-story1 {
+      
+        text-align: center;
+        justify-content: center;
+        padding-left: 50px;
+      }
+      /* .story1 {
+        margin-top: 100px;
+      } */
+      .img-story1 {
+        display: flex;
+        justify-content: center;
+      }
+      .icon-img {
+        position: absolute;
+      }
+      #btn-img {
+        background-color: transparent;
+        border: none;
+        font-size: 50px;
+        margin: 300px 300px;
+        color: white;
+        border-radius: 10px;
+      }
+      #btn-img:hover {
+        border-radius: 10px;
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+    </style>
+    <main style="margin: 0;">
+      <!-- <div class="contaner"> -->
+        <div class="story1" style="background-image: url('./Img/img-Story1/Hon-Son-01.jpg'); padding-top: 110px;margin-top: 0px;">
+          <div class="text-story1" >
+            <h1
+              style="
+                font-family: 'Montserrat', sans-serif;
+                font-size: 20px;
+                font-size: 40px;
+              "
+            >
+              Đảo Hòn Sơn
+            </h1>
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 20px">
+              Hòn Sơn thuộc vịnh Hà Tiên, cách Rạch Giá 65km, nằm giữa đảo Nam
+              Du và đảo Hòn Tre. Hòn Sơn còn có tên gọi là đảo Rái Cá bởi ngày
+              trước nơi này mọc rất nhiều cây dầu rái, nhựa của chúng dùng để
+              quét lên vỏ thuyền, tránh bị nước biển ăn mòn.
+            </p>
+          </div>
+          <div class="img-story1">
+            <!-- <div class="icon-img">
+              <button id="btn-img" onclick="previous()">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button id="btn-img" onclick="next()">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div> -->
+            <!-- <div class="img-intro">
+              <img
+                id="img-intro-inline"
+                src="./Img/img-intro/1.png"
+                alt="hòn sơn"
+              />
+            </div> -->
+          </div>
+        </div>
+     
+    </main>
+    <script>
+      var indexImg = 1;
+      function next() {
+        var imgElement = document.getElementById("img-intro-inline");
+        if (indexImg < 4) {
+          indexImg++;
+          imgElement.setAttribute("src", `./Img/img-intro/${indexImg}.png`);
+        } else {
+          indexImg = 1;
+          imgElement.setAttribute("src", `./Img/img-intro/${indexImg}.png`);
+        }
+      }
+      function previous() {
+        var imgElement = document.getElementById("img-intro-inline");
+        if (indexImg > 1) {
+          indexImg--;
+          imgElement.setAttribute("src", `./Img/img-intro/${indexImg}.png`);
+        } else {
+          indexImg = 4;
+          imgElement.setAttribute("src", `./Img/img-intro/${indexImg}.png`);
+        }
+      }
+    </script>
+
+    <style>
+      #btn-diadanh {
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 40px;
+        align-items: center;
+      }
+
+      #btn-diadanh:hover{
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+    </style>
+
+    <div class="contaner">
+      <div class="story2">
+        <div class="text-story1" style="margin-top: 100px">
+          <h1
+            style="
+              font-family: 'Montserrat', sans-serif;
+              font-size: 20px;
+              font-size: 40px;
+            "
+          >
+            Địa danh
+          </h1>
+          <p style="font-family: 'Montserrat', sans-serif; font-size: 20px">
+            Hòn Sơn, có các địa danh tâm linh là những nơi thờ tự như Đình Thần
+            Lại Sơn, Miếu Bà Cố Chủ, chùa Hải Sơn.
+          </p>
+        </div>
+      </div>
+    </div>
+    <table style="width: 100%">
+      <tr>
+        <td style="width: 10%"></td>
+        <td style="width: 80%">
+          <div class="diadanh-table">
+            <table style="width: 100%">
+              <tr>
+                <td
+                  style="
+                    width: 50%;
+                    height: 500px;
+                    background-image: url('./Img/img-diadanh/1.png');
+                    background-repeat: no-repeat;
+                  "
+                  id="td-table"
+                >
+                  <!-- <img src="./Img/img-diadanh/1.png" alt="" st> -->
+                  <button
+                    id="btn-diadanh"
+                    style="
+                      margin-top: 100px;
+                      margin-left: 50px;
+                      margin-right: 550px;
+                      margin-bottom: 0;
+                    "
+                  >
+                    <i class="fa-solid fa-chevron-left" onclick="previousdiadanh()"></i>
+                  </button>
+                  <button id="btn-diadanh" onclick="nextdiadanh()">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                  <progress
+                    max="100"
+                    value="33"
+                    style="
+                      width: 500px;
+                      height: 20px;
+                      margin-left: 100px;
+                      margin-top: 300px;
+                    "
+                    id="progress"
+                  ></progress>
+                </td>
+                <td style="width: 50%">
+                  <h1
+                    style="
+                      font-family: 'Montserrat', sans-serif;
+          
+                      align-items: center;
+                      display: flex;
+                      justify-content: center;
+                    "
+                    id="title-h1"
+                  >
+                    Đình thần Lại Sơn
+                  </h1>
+                  <p
+                    style="
+                      font-family: 'Montserrat', sans-serif;
+                      font-size: 20px;
+                      margin-left: 20px;
+                      width: 90%;
+                    "
+                    id="title-p"
+                  >
+                    Một trong những di tích lịch sử đáng chú ý là Đình thần Lại
+                    Sơn - nơi thờ tự Thành hoàng bổn cảnh, phối thờ người anh
+                    hùng Nguyễn Trung Trực ở tiền điện. Đặc biệt, đình có sắc
+                    phong của vua Bảo Đại cho Thành hoàng. Trong đền, trên tấm
+                    vách cũ bên hương án và trong ngổn ngang kiệu rước trống hội
+                    có treo một bức tranh được vẽ vào năm 1969.
+                  </p>
+             
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+        <td style="width: 10%"></td>
+      </tr>
+    </table>
+
+    <script>
+      var indexImg = 0;
+      function nextdiadanh(){
+        var imgElement = document.getElementById("td-table");
+        var titleh1 = document.getElementById("title-h1");
+        var titlep = document.getElementById("title-p");
+        var progressbar = document.getElementById("progress")
+        if(indexImg < 3){
+          console.log("img")
+          indexImg++;
+          if(indexImg == 1){
+          imgElement.style.backgroundImage = `url('./Img/img-diadanh/${indexImg}.png')`;
+          titleh1.innerHTML = "Đình thần Lại Sơn";
+          titlep.innerHTML = "Một trong những di tích lịch sử đáng chú ý là Đình thần Lại Sơn - nơi thờ tự Thành hoàng bổn cảnh, phối thờ người anh hùng Nguyễn Trung Trực ở tiền điện. Đặc biệt, đình có sắc phong của vua Bảo Đại cho Thành hoàng. Trong đền, trên tấm vách cũ bên hương án và trong ngổn ngang kiệu rước trống hội có treo một bức tranh được vẽ vào năm 1969."
+          progressbar.setAttribute("value","33")
+          }
+          if(indexImg == 2){
+          imgElement.style.backgroundImage = `url('./Img/img-diadanh/${indexImg}.png')`;
+          titleh1.innerHTML = "Miếu Bà Cố Chủ";
+          titlep.innerHTML = "Miếu Bà Cố Chủ hay còn gọi là Bà Chúa Hòn tọa lạc ở xã Lại Sơn, huyện Kiên Hải, tỉnh Kiên Giang nằm cách thành phố Rạch Giá 65km về phía Tây, với diện tích 11,5km2. Theo truyền thuyết Bà tới hòn đảo này rất sớm từ lúc nó còn hoang vu cùng với con gái và con rể. Tên của Bà là Nguyễn Thị Phố, quê ở Cà Mau. Từ đó, ngư dân từ khắp nơi về đây sinh cơ lập nghiệp trong sự đùm bọc chở che của Bà Chúa Hòn và đã lập miếu là nơi thờ người đầu tiên đến và khai phá vùng đất đảo hoang vu Hòn Sơn."
+          progressbar.setAttribute("value","66")
+        }
+        
+        if(indexImg == 3){
+          imgElement.style.backgroundImage = `url('./Img/img-diadanh/${indexImg}.png')`;
+          titleh1.innerHTML = "chùa Hải Sơn";
+          titlep.innerHTML = "Đây là một ngôi chùa có lịch sử lâu đời nhất tại Hòn Sơn, rất được nhiều người dân trên đảo tin tưởng và thường xuyên đi chùa cúng bái, hiện tại chùa Hải Sơn cũng là một địa điểm tham quan của các du khách từ phương xa đến Hòn Sơn để tham quan, vì vậy chuyến du lịch Hòn Sơn của bạn đừng bao giờ quên ghé qua chùa để tham quan và cầu nguyện mai mắn cho gia đình và người thân của bạn nhé."
+          progressbar.setAttribute("value","100")
+        }
+
+        }
+
+       
+        else{
+          indexImg = 1;
+          imgElement.style.backgroundImage = `url('./Img/img-diadanh/${indexImg}.png')`;
+          titleh1.innerHTML = "Đình thần Lại Sơn";
+          titlep.innerHTML = "Một trong những di tích lịch sử đáng chú ý là Đình thần Lại Sơn - nơi thờ tự Thành hoàng bổn cảnh, phối thờ người anh hùng Nguyễn Trung Trực ở tiền điện. Đặc biệt, đình có sắc phong của vua Bảo Đại cho Thành hoàng. Trong đền, trên tấm vách cũ bên hương án và trong ngổn ngang kiệu rước trống hội có treo một bức tranh được vẽ vào năm 1969."
+          progressbar.setAttribute("value","33")
+        }
+      }
+
+      function previousdiadanh(){
+        var imgElement = document.getElementById("td-table");
+        var titleh1 = document.getElementById("title-h1");
+        var titlep = document.getElementById("title-p");
+        var progressbar = document.getElementById("progress")
+
+        if(indexImg > 1){
+          console.log("img")
+          indexImg--;
+          if(indexImg == 3){
+          imgElement.style.backgroundImage = `url('./Img/img-diadanh/${indexImg}.png')`;
+          titleh1.innerHTML = "chùa Hải Sơn";
+          titlep.innerHTML = "Đây là một ngôi chùa có lịch sử lâu đời nhất tại Hòn Sơn, rất được nhiều người dân trên đảo tin tưởng và thường xuyên đi chùa cúng bái, hiện tại chùa Hải Sơn cũng là một địa điểm tham quan của các du khách từ phương xa đến Hòn Sơn để tham quan, vì vậy chuyến du lịch Hòn Sơn của bạn đừng bao giờ quên ghé qua chùa để tham quan và cầu nguyện mai mắn cho gia đình và người thân của bạn nhé."
+          progressbar.setAttribute("value","100")
+        }
+        if(indexImg == 1){
+          imgElement.style.backgroundImage = `url('./Img/img-diadanh/${indexImg}.png')`;
+          titleh1.innerHTML = "Đình thần Lại Sơn";
+          titlep.innerHTML = "Một trong những di tích lịch sử đáng chú ý là Đình thần Lại Sơn - nơi thờ tự Thành hoàng bổn cảnh, phối thờ người anh hùng Nguyễn Trung Trực ở tiền điện. Đặc biệt, đình có sắc phong của vua Bảo Đại cho Thành hoàng. Trong đền, trên tấm vách cũ bên hương án và trong ngổn ngang kiệu rước trống hội có treo một bức tranh được vẽ vào năm 1969."
+          progressbar.setAttribute("value","33")
+        }
+        if(indexImg == 2){
+          imgElement.style.backgroundImage = `url('./Img/img-diadanh/${indexImg}.png')`;
+          titleh1.innerHTML = "Miếu Bà Cố Chủ";
+          titlep.innerHTML = "Miếu Bà Cố Chủ hay còn gọi là Bà Chúa Hòn tọa lạc ở xã Lại Sơn, huyện Kiên Hải, tỉnh Kiên Giang nằm cách thành phố Rạch Giá 65km về phía Tây, với diện tích 11,5km2. Theo truyền thuyết Bà tới hòn đảo này rất sớm từ lúc nó còn hoang vu cùng với con gái và con rể. Tên của Bà là Nguyễn Thị Phố, quê ở Cà Mau. Từ đó, ngư dân từ khắp nơi về đây sinh cơ lập nghiệp trong sự đùm bọc chở che của Bà Chúa Hòn và đã lập miếu là nơi thờ người đầu tiên đến và khai phá vùng đất đảo hoang vu Hòn Sơn."
+          progressbar.setAttribute("value","66")
+        }
+        }
+       
+        else{
+          indexImg = 3;
+          imgElement.style.backgroundImage = `url('./Img/img-diadanh/${indexImg}.png')`;
+          titleh1.innerHTML = "chùa Hải Sơn";
+          titlep.innerHTML = "Đây là một ngôi chùa có lịch sử lâu đời nhất tại Hòn Sơn, rất được nhiều người dân trên đảo tin tưởng và thường xuyên đi chùa cúng bái, hiện tại chùa Hải Sơn cũng là một địa điểm tham quan của các du khách từ phương xa đến Hòn Sơn để tham quan, vì vậy chuyến du lịch Hòn Sơn của bạn đừng bao giờ quên ghé qua chùa để tham quan và cầu nguyện mai mắn cho gia đình và người thân của bạn nhé."
+          progressbar.setAttribute("value","100")
+        }
+      }
+    </script>
+
+    <style>
+      .story3{
+        margin-top: 200px;
+        font-size: 20px;
+        text-align: center;
+      }
+      .text-intro{
+        font-family: 'Montserrat', sans-serif;
+      }
+    </style>
+
+    <div class="contaner">
+      <div class="story3">
+        <div class="text-intro">
+          <h1> Thiên nhiên</h1>
+          <p>Hòn Sơn có 7 đỉnh núi dính liền vào nhau, Ma Thiên Lãnh là đỉnh núi cao nhất với độ cao khoảng 450 m so với mặt nước biển, trên đỉnh Ma Thiên Lãnh có một tảng đá bằng phẳng, với phong cảnh xung quanh rất đẹp nên gọi là Sân Tiên.</p>
+        </div>
+        <div class="intro-video">
+          <video src="./Video/Flycam 4k -- Hòn Sơn - Kiên Giang.mp4" controls></video>
+        </div>
+      </div>
+    </div>
+
+
+    
+
+    <style>
+      .story-final{
+        margin: 50px ;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 100px;
+      }
+      .final-text{
+        font-size: 20px;
+      }
+      .input-mail{
+        font-size: 20px
+      }
+   
+      .input-mail i{
+        background-color: white;
+        width: px;
+        height: 25px;
+        align-items: center;
+        opacity: 0.9;
+      }
+
+      #btn-final{
+        background-color: white;
+        border: none;
+        font-size: 17px;
+        margin: 0 10px;
+      }
+
+      #btn-final:hover{
+        transform: scale(1.2);
+        cursor: pointer;
+      }
+
+    </style>
+
+    <footer style="background-color: #BFB29E; width: 100%; height: 300px;">
+      <div class="contaner">
+        <div class="story-final" >
+        <div class="final-text" style="width: 40%;">
+          <h3>Luôn biết thông tin mới nhất</h3>
+          <p>Đăng ký nhận bản tin của chúng tôi để biết thêm các khuyến nghị về du lịch và phong cách sống cũng như các chương trình khuyến mãi thú vị.</p>
+        </div>
+        <div class="input-mail" style="width: 50%;">
+          <i class="fa-regular fa-envelope"></i>
+          <input type="text" placeholder= "Điền email của bạn tại đây" style="width: 400px;height: 20px;" >
+          <button id="btn-final"> Đăng ký </button>
+        </div>
+      </div>
+      </div>
+    </footer>
+  </body>
+</html>
